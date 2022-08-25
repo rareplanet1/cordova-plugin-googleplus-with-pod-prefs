@@ -1,18 +1,7 @@
-# Google Sign-In Cordova/PhoneGap Plugin
+# Google Sign-In Cordova Plugin
 
-[![NPM version][npm-image]][npm-url]
-[![Downloads][downloads-image]][npm-url]
-[![Twitter Follow][twitter-image]][twitter-url]
+> ⚠️ This is a fork of https://github.com/EddyVerbruggen/cordova-plugin-googleplus with the addition of preferences for IOS_GOOGLE_SIGN_IN_VERSION and IOS_GOOGLE_UTILITIES_VERSION.
 
-[build-status]:https://travis-ci.org/EddyVerbruggen/cordova-plugin-googleplus.svg?branch=master
-[build-url]:https://travis-ci.org/EddyVerbruggen/cordova-plugin-googleplus
-[npm-image]:http://img.shields.io/npm/v/cordova-plugin-googleplus.svg
-[npm-url]:https://npmjs.org/package/cordova-plugin-googleplus
-[downloads-image]:http://img.shields.io/npm/dm/cordova-plugin-googleplus.svg
-[twitter-image]:https://img.shields.io/twitter/follow/eddyverbruggen.svg?style=social&label=Follow%20me
-[twitter-url]:https://twitter.com/eddyverbruggen
-
-> ⚠️ From plugin version 6.0.0 the minimum required cordova-ios version is 4.5.0. Need to use a lower cordova-ios version? Use plugin version 5.3.2 or lower.
 
 ## 0. Index
 
@@ -20,7 +9,7 @@
 2. [Screenshots](#2-screenshots)
 3. [Google API setup](#3-google-api-setup)
 4. [Installation (CLI / Plugman)](#4-installation-phonegap-cli--cordova-cli)
-5. [Installation (PhoneGap Build)](#5-installation-phonegap-build)
+5. [Installation (Volt Builder)](#5-installation-phonegap-build)
 6. [Installation (iOS and Cocoapods)](#6-installation-ios-and-cocoapods)
 7. [Usage](#7-usage)
 8. [Exchanging the `idToken`](#8-exchanging-the-idtoken)
@@ -105,24 +94,23 @@ Google re-signs your app with a different certificate when you publish it in the
 
 If you want to get an `idToken` or `serverAuthCode` back from the Sign In Process, you will need to pass the client ID for your project's web application. This can be found on your project's API credentials page on the [Google Developer's Console](https://console.developers.google.com/).
 
-## 4. Installation (PhoneGap CLI / Cordova CLI)
+## 4. Installation (Cordova CLI)
 This plugin is compatible with:
 * [Cordova Plugman](https://github.com/apache/cordova-plugman)
-* [PhoneGap 3.0 CLI](http://docs.phonegap.com/en/3.0.0/guide_cli_index.md.html#The%20Command-line%20Interface_add_features)
 * [Ionic](http://ionic.io/) ***(must use the Cordova CLI)***
 * [Meteor JS](https://atmospherejs.com/hedcet/cordova-google-plus-native-sign-in)
 
 Here's how it works (backup your project first!):
 
-Using the Cordova CLI and [npm](https://www.npmjs.com/package/cordova-plugin-googleplus):
+Using the Cordova CLI and [npm](https://www.npmjs.com/package/cordova-plugin-googleplus-with-pod-prefs):
 ```
-$ cordova plugin add cordova-plugin-googleplus --save --variable REVERSED_CLIENT_ID=myreversedclientid --variable WEB_APPLICATION_CLIENT_ID=mywebapplicationclientid
+$ cordova plugin add cordova-plugin-googleplus-with-pod-prefs --save --variable REVERSED_CLIENT_ID=myreversedclientid --variable WEB_APPLICATION_CLIENT_ID=mywebapplicationclientid
 $ cordova prepare
 ```
 
 Using the Cordova CLI to fetch the latest version from GitHub:
 ```
-$ cordova plugin add https://github.com/EddyVerbruggen/cordova-plugin-googleplus --save --variable REVERSED_CLIENT_ID=myreversedclientid  --variable WEB_APPLICATION_CLIENT_ID=mywebapplicationclientid
+$ cordova plugin add https://github.com/rareplanet1/cordova-plugin-googleplus-with-pod-prefs --save --variable REVERSED_CLIENT_ID=myreversedclientid  --variable WEB_APPLICATION_CLIENT_ID=mywebapplicationclientid
 $ cordova prepare
 ```
 
@@ -136,12 +124,12 @@ IMPORTANT:
 
 GooglePlus.js is brought in automatically. There is no need to change or add anything in your html.
 
-## 5. Installation (PhoneGap Build)
+## 5. Installation (Volt Builder)
 Add this to your config.xml:
 
 For the (stable) NPM Version:
 ```xml
-<plugin name="cordova-plugin-googleplus" source="npm">
+<plugin name="cordova-plugin-googleplus-with-pod-prefs" source="npm">
   <variable name="REVERSED_CLIENT_ID" value="myreversedclientid" />
   <variable name="WEB_APPLICATION_CLIENT_ID" value="mywebapplicationclientid" />
 </plugin>
@@ -149,7 +137,7 @@ For the (stable) NPM Version:
 
 For the latest version from Git (not recommended):
 ```xml
-<plugin spec="https://github.com/EddyVerbruggen/cordova-plugin-googleplus.git" source="git">
+<plugin spec="https://github.com/rareplanet1/cordova-plugin-googleplus-with-pod-prefs.git" source="git">
   <variable name="REVERSED_CLIENT_ID" value="myreversedclientid" />
   <variable name="WEB_APPLICATION_CLIENT_ID" value="mywebapplicationclientid" />
 <plugin>

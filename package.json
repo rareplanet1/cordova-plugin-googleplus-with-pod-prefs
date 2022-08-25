@@ -1,17 +1,17 @@
 {
   "version": "8.5.2",
-  "name": "cordova-plugin-googleplus",
+  "name": "cordova-plugin-googleplus-with-pod-prefs",
   "cordova_name": "Google SignIn",
-  "description": "Use your Google account to authenticate with the app.",
+  "description": "Sign in with Google for Cordova apps.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus.git"
+    "url": "https://github.com/rareplanet1/cordova-plugin-googleplus-with-pod-prefs"
   },
   "bugs": {
-    "url": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus/issues"
+    "url": "https://github.com/rareplanet1/cordova-plugin-googleplus-with-pod-prefs/issues"
   },
-  "homepage": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus#readme",
+  "homepage": "https://github.com/rareplanet1/cordova-plugin-googleplus-with-pod-prefs#readme",
   "keywords": [
     "Google",
     "Google SignIn",
@@ -37,7 +37,7 @@
   "engines": [
     {
       "name": "cordova",
-      "version": ">=3.5.0"
+      "version": ">=4.5.0"
     }
   ]
 }

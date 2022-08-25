@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-googleplus"
+        id="cordova-plugin-googleplus-with-pod-prefs"
         version="8.5.2">
 
   <name>Google SignIn</name>
@@ -14,9 +14,9 @@
 
   <keywords>Google, Google SignIn, GoogleSignIn, Google Login, Login, OAuth, Identity, Authentication</keywords>
 
-  <repo>https://github.com/EddyVerbruggen/cordova-plugin-googleplus.git</repo>
+  <repo>https://github.com/rareplanet1/cordova-plugin-googleplus-with-pod-prefs.git</repo>
 
-  <issue>https://github.com/EddyVerbruggen/cordova-plugin-googleplus/issues</issue>
+  <issue>https://github.com/rareplanet1/cordova-plugin-googleplus-with-pod-prefs/issues</issue>
 
   <engines>
     <engine name="cordova" version=">=7.1.0"/>
@@ -30,9 +30,11 @@
   <!-- android -->
   <platform name="android">
 
-	<preference name="PLAY_SERVICES_VERSION" default="15.0.1"/>
-    <framework src="com.google.android.gms:play-services-auth:$PLAY_SERVICES_VERSION" />
-    <framework src="com.google.android.gms:play-services-identity:$PLAY_SERVICES_VERSION" />
+	<preference name="PLAY_SERVICES_AUTH_VERSION" default="15.0.1"/>
+	<preference name="PLAY_SERVICES_IDENTITY_VERSION" default="15.0.1"/>
+	
+    <framework src="com.google.android.gms:play-services-auth:$PLAY_SERVICES_AUTH_VERSION" />
+    <framework src="com.google.android.gms:play-services-identity:$PLAY_SERVICES_IDENTITY_VERSION" />
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="GooglePlus">
@@ -65,6 +67,8 @@
     <source-file src="src/ios/GooglePlus.m"/>
 
     <preference name="REVERSED_CLIENT_ID" />
+	<preference name="IOS_GOOGLE_SIGN_IN_VERSION" default="~> 5.0.2"/>
+    <preference name="IOS_GOOGLE_UTILITIES_VERSION" default="~> 7.2.2"/>
 
     <config-file target="*-Info.plist" parent="CFBundleURLTypes">
       <array>
@@ -107,8 +111,8 @@
         <source url="https://cdn.cocoapods.org/"/>
       </config>
       <pods use-frameworks="true">
-        <pod name="GoogleSignIn" spec="~> 5.0.2"/>
-        <pod name="GoogleUtilities" spec="~> 7.2.2"/>
+        <pod name="GoogleSignIn" spec="$IOS_GOOGLE_SIGN_IN_VERSION"/>
+        <pod name="GoogleUtilities" spec="$IOS_GOOGLE_UTILITIES_VERSION"/>
       </pods>
     </podspec>
 
